@@ -1,0 +1,40 @@
+# Cookbook:: user_creation
+# Recipe:: default
+#
+# Copyright:: 2018, The Authors, All Rights Reserved.
+user 'iibuser' do
+  comment 'user to connect iib'
+  home '/home/iibuser'
+  shell '/bin/bash'
+  password 'iibpasswd'
+end
+
+
+
+
+# Cookbook:: apache_install
+# Recipe:: default
+#
+# Copyright:: 2018, The Authors, All Rights Reserved.
+package "httpd" do
+  action :install 
+end
+service "httpd" do
+  action [ :enable, :start ]
+end
+
+
+
+
+
+
+# Cookbook:: tomcat_install
+# Recipe:: default
+#
+# Copyright:: 2018, The Authors, All Rights Reserved.
+package "tomcat" do
+  action :install 
+end
+service "tomcat" do
+  action [ :enable, :start ]
+end
