@@ -1,0 +1,10 @@
+#
+# Cookbook:: user_creation
+# Recipe:: default
+#
+# Copyright:: 2018, The Authors, All Rights Reserved.
+user 'iibuser2' do
+  comment 'user to connect iib'
+  home '/home/iibuser2'
+  shell '/bin/bash'
+end
